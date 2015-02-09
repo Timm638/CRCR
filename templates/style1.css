@@ -1,0 +1,162 @@
+text {
+	font-family:Droid Sans;
+	fill-opacity:.4;
+}
+
+.specialdaytext {
+	font-family:Droid Sans;
+	fill-opacity:.3;
+}
+
+
+.birthdaytext {
+	font-family:Droid Sans;
+	fill-opacity:1;
+	stroke:#CC0000;
+	fill:#CC0000;
+}
+
+.birthdaytext.feiertagstext {
+	font-family:Droid Sans;
+	fill-opacity:1;
+	stroke:#000000;
+	fill:#000000;
+}
+
+
+
+.title{
+	fill-opacity:1;
+	font-size:38.5202446px;
+	text-align:center;
+	text-anchor:middle;
+	font-family:Droid Sans;
+	font-size:154px
+}
+
+.titlebar{
+	fill:#009900;
+	fill-opacity:1;
+	stroke:#009900;
+	stroke-opacity:1;
+}
+
+.copyleft{
+	text-anchor:end;
+	font-size:30px;
+}
+
+.monthname{
+	fill-opacity:1;
+	font-size:55px;
+	text-align:center;
+	text-anchor:middle;
+	font-family:Maya;
+}
+
+.month{
+	fill:none;
+	stroke:#000000;
+	stroke-width:0;
+	enable-background:accumulate
+}
+
+.day{
+	fill:none;
+	stroke:#000000;
+	stroke-width:1;
+	enable-background:accumulate
+}
+
+.invisible {
+	display:none !important;
+}
+
+.nofill {
+	stroke:#000000;
+	fill-opacity:0;
+	stroke-width:1;
+}
+
+.daynumber{
+	text-anchor:end;
+	fill-opacity:1;
+	font-size:60px;
+}
+
+.weekday{
+	fill-opacity:1;
+	stroke:#339900;
+	fill:#339900;
+	font-size:30px;
+}
+
+/*stammtisch*/
+.trunktable{
+	stroke-width:5;
+}
+
+.holiday{
+	fill-opacity:.08;
+	fill:#00CC00;
+}
+
+.holidaymark{
+    fill:#008000;
+}
+
+
+.weekend{
+	fill-opacity:.2;
+	fill:#00CC00;
+}
+
+.holiday.weekend{
+	/*fill:#D0F0D0;*/
+}
+
+.test{
+	fill:#CC0000;
+}
+
+.birthday{
+	/*fill:#CC0000;*/
+}
+
+.birthdaymark{
+	stroke-width:0;
+	fill:#CC0000;
+}
+
+.birthday.weekend{
+	/*fill:#F0F000;*/
+}
+
+.birthday.holiday{
+	/*fill:#DFFFA0;*/
+}
+
+.birthday.holiday.weekend{
+	/*fill:#AFDF00;*/
+}
+
+.bergmark{
+	fill:#003399;
+}
+
+.stammtischmark{
+	fill:#FF9900;
+}
+
+
+.sonstigesmark{
+	fill:#660066;
+}
+
+.termine.weekend{
+	/*fill:#FFB0B0;*/
+}
+
+.termine.birthday{
+	/*fill:#FFE090;*/
+}
