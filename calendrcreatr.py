@@ -39,7 +39,7 @@ except Exception as e:
 
 
 #einige hilfsstrukturen initialisieren
-monatslaenge = (31,28,31,30,31,30,31,31,30,31,30,31)
+monatslaenge = [31,28,31,30,31,30,31,31,30,31,30,31]
 wochentage = ("montag", "dienstag", "mittwoch", "donnerstag", "freitag", "samstag", "sonntag")
 wochentagoffset = datetime.date(jahr, 1, 1).weekday()
 
@@ -55,9 +55,9 @@ for (d,m),titel,klasse in sondertage:
 sondertage = sondertage2
 
 #einzelne freien tage eintragen
-freietage = [sum(monatslaenge[:m-1])+d for (d,m) in freietage]
+freietage = [sum(monatslaenge[:m-1])+d for (d,m) in freietage] if not freietage[0]==(0,0) else []
 #pro ferienzeitraum, jeden freien tag (range(anfang, ende+1)) eintragn
-freietage += [x for ((d1,m1),(d2,m2)) in ferienzeitraeume for x in range(sum(monatslaenge[:m1-1])+d1,sum(monatslaenge[:m2-1])+d2+1)]
+freietage += [x for ((d1,m1),(d2,m2)) in ferienzeitraeume for x in range(sum(monatslaenge[:m1-1])+d1,sum(monatslaenge[:m2-1])+d2+1)] if not ferienzeitraeume[0] == ((0,0),(0,0)) else []
 
 #vorlage oeffnen
 try:
