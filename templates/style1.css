@@ -156,6 +156,12 @@ text {
     fill:#FFFF00;
 }
 
+.pruefungmark{
+    fill:#FF9900;
+	fill-opacity:.7;
+
+}
+
 .termine.weekend{
 	/*fill:#FFB0B0;*/
 }

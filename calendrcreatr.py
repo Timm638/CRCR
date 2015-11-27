@@ -209,6 +209,8 @@ for rect in image.getElementsByTagName("rect"):
                     rect.addClass("sonstigesmark")
                 if "fsi" in rect.getAttribute("class"):
                     rect.addClass("fsimark")
+                if "pruefung" in rect.getAttribute("class"):
+                    rect.addClass("pruefungmark")
                 if "birthday" in rect.getAttribute("class"):
                     rect.addClass("birthdaymark")
 
