@@ -144,7 +144,7 @@ for rect in image.getElementsByTagName("rect"):
                                 day,
                                 #textgroesse haengt von anzahl der eintraege ab
                                 float(rect.getAttribute("height"))/(1.7+0.5*len(sondertage[tagImJahr])),
-                                float(rect.getAttribute("x"))+60+(10 if len(sondertage[tagImJahr])>1 else 0),
+                                float(rect.getAttribute("x"))+60,
                                 #y mit magischer formel bestimmen, die auch die anzahl der eintraege mit einbezieht
                                 float(rect.getAttribute("y"))+float(rect.getAttribute("height"))/len(sondertage[tagImJahr])*(i+1)-0.3*(float(rect.getAttribute("height"))/(0.7+0.7*len(sondertage[tagImJahr]))),
                                 sondertag[0])).firstChild, rect.nextSibling)
@@ -157,7 +157,7 @@ for rect in image.getElementsByTagName("rect"):
                             day,
                             #textgroesse haengt von anzahl der eintraege ab
                             float(rect.getAttribute("height"))/(2.8+0.5*len(sondertage[tagImJahr])),
-                            float(rect.getAttribute("x"))+58+(10 if len(sondertage[tagImJahr])>1 else 0),
+                            float(rect.getAttribute("x"))+58,
                             #y mit magischer formel bestimmen, die auch die anzahl der eintraege mit einbezieht
                             float(rect.getAttribute("y"))+float(rect.getAttribute("height"))/len(sondertage[tagImJahr])*(i+1)-0.3*(float(rect.getAttribute("height"))/(0.7+0.7*len(sondertage[tagImJahr]))),
                             sondertag[0])).firstChild, rect.nextSibling)
@@ -201,14 +201,16 @@ for rect in image.getElementsByTagName("rect"):
 
         if tagImJahr in sondertage:
             for i, sondertag in enumerate(sondertage[tagImJahr]):
-                if "birthday" in rect.getAttribute("class"):
-                    rect.addClass("birthdaymark")
                 if "berg" in rect.getAttribute("class"):
                     rect.addClass("bergmark")
                 if "stammtisch" in rect.getAttribute("class"):
                     rect.addClass("stammtischmark")
                 if "sonstiges" in rect.getAttribute("class"):
                     rect.addClass("sonstigesmark")
+                if "fsi" in rect.getAttribute("class"):
+                    rect.addClass("fsimark")
+                if "birthday" in rect.getAttribute("class"):
+                    rect.addClass("birthdaymark")
 
 
         if tagImJahr in freietage:

@@ -12,14 +12,14 @@ text {
 .birthdaytext {
 	font-family:Droid Sans;
 	fill-opacity:1;
+    /*stroke-width:.3px;*/
 	stroke:#CC0000;
 	fill:#CC0000;
 }
 
-.birthdaytext.feiertagstext {
+.feiertagstext {
 	font-family:Droid Sans;
-	fill-opacity:1;
-	stroke:#000000;
+	fill-opacity:.4;
 	fill:#000000;
 }
 
@@ -27,7 +27,6 @@ text {
 
 .title{
 	fill-opacity:1;
-	font-size:38.5202446px;
 	text-align:center;
 	text-anchor:middle;
 	font-family:Droid Sans;
@@ -151,6 +150,10 @@ text {
 
 .sonstigesmark{
 	fill:#660066;
+}
+
+.fsimark{
+    fill:#FFFF00;
 }
 
 .termine.weekend{
