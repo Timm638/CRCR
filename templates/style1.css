@@ -23,7 +23,10 @@ text {
 	fill:#000000;
 }
 
-
+.loscher {
+	font-family:Droid Sans;
+	fill:#FF9900;
+}
 
 .title{
 	fill-opacity:1;

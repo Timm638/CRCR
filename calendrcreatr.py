@@ -9,6 +9,7 @@ xml.dom.minidom.Element.addClass = lambda x,y: x.setAttribute("class", x.getAttr
 #default werte setzen
 jahr=datetime.date.today().year
 stammtischwochen = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53]
+loscherwochen = [1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51]
 ferienzeiträume = []
 freietage = []
 sondertage = []
@@ -24,6 +25,7 @@ try:
     #zeile fuer zeile einlesen, adaequat splitten und zu int konvertieren
     jahr = int(conf.readline())
     stammtischwochen = list(map(int, conf.readline().split(",")))
+    loscherwochen = list(map(int, conf.readline().split(",")))
     ferienzeitraeume = [(tuple(map(int,von.split("."))),tuple(map(int,bis.split(".")))) for von, bis in [zeitraum.split("-") for zeitraum in conf.readline().split(",")]]
     freietage = [tuple(map(int,b.split("."))) for b in conf.readline().split(",")]
 
@@ -120,6 +122,10 @@ for rect in image.getElementsByTagName("rect"):
         #stammtischwochen
         if wochentag == 2 and int(tagImJahr/7+1) in stammtischwochen:
             rect.addClass("trunktable")
+
+        #loscherwochen
+        if wochentag == 5 and int(tagImJahr/7+1) in loscherwochen:
+            rect.nextSibling.nextSibling.addClass("loscher")
 
         #ferien und feiertage faerben
         if tagImJahr in freietage:
