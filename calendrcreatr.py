@@ -10,7 +10,7 @@ xml.dom.minidom.Element.addClass = lambda x,y: x.setAttribute("class", x.getAttr
 jahr=datetime.date.today().year
 stammtischwochen = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53]
 loscherwochen = [1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51]
-ferienzeiträume = []
+ferienzeitraeume = []
 freietage = []
 sondertage = []
 filename = "templates/kalender_fsce.svg"
@@ -31,7 +31,7 @@ try:
 
     #ab hier nur noch sondertage, bis StopIteration
     while True:
-        sondertage += [((int(tag),int(monat)), titel, klasse) for (tag,monat,titel,klasse) in [conf.readline().replace(".",",").split(","),]]
+        sondertage += [((int(tag),int(monat)), titel, klasse) for (tag,monat,titel,klasse) in [conf.readline().replace("\n", "").replace(".",",").split(","),]]
 except StopIteration:
     pass
 except Exception as e:
@@ -206,7 +206,9 @@ for rect in image.getElementsByTagName("rect"):
 
 
         if tagImJahr in sondertage:
-            for i, sondertag in enumerate(sondertage[tagImJahr]):
+            if "birthday" in rect.getAttribute("class"):
+                rect.addClass("birthdaymark")
+            else:
                 if "berg" in rect.getAttribute("class"):
                     rect.addClass("bergmark")
                 if "stammtisch" in rect.getAttribute("class"):
@@ -217,9 +219,6 @@ for rect in image.getElementsByTagName("rect"):
                     rect.addClass("fsimark")
                 if "pruefung" in rect.getAttribute("class"):
                     rect.addClass("pruefungmark")
-                if "birthday" in rect.getAttribute("class"):
-                    rect.addClass("birthdaymark")
-
 
         if tagImJahr in freietage:
             if "birthday" not in rect.getAttribute("class") and "berg" not in rect.getAttribute("class") and "stammtisch" not in rect.getAttribute("class") and "sonstiges" not in rect.getAttribute("class"):
