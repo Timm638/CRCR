@@ -40,3 +40,8 @@ Weekly dates can be written by `DD.MM.YYYY~1w~DD.MM.YYYY`. The given number can 
 
 This software is released under CC-BY-SA-NC 3.
 (yes I know that this is technically not a software license. So use it for personal use, ask if you want to make money from that and retain a notice of this license. Use your common sense.)
+
+### Contributors
+- t-animal
+- FS CE
+- Timm638
